@@ -1,0 +1,21 @@
+{
+  "name": "studio-typo-widget",
+  "version": "1.0.0",
+  "description": "Studio.Typo attribution widget — typewriter animation Web Component",
+  "main": "dist/studio-typo.js",
+  "module": "dist/studio-typo.esm.js",
+  "type": "module",
+  "files": [
+    "dist/",
+    "src/"
+  ],
+  "scripts": {
+    "build": "node build.js",
+    "dev": "npx serve ."
+  },
+  "devDependencies": {
+    "esbuild": "^0.21.0"
+  },
+  "keywords": ["studio-typo", "attribution", "web-component", "typewriter"],
+  "license": "MIT"
+}

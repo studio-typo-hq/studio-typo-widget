@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Studio.Typo Widget Test</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: system-ui, sans-serif;
+      min-height: 300vh;
+    }
+
+    section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 2rem;
+      gap: 2rem;
+    }
+
+    h2 { font-size: 1.2rem; opacity: 0.6; font-weight: 400; }
+
+    /* Dark section */
+    .dark {
+      background: #0f1114;
+      color: #ffffff;
+    }
+
+    /* Light section */
+    .light {
+      background: #f5f5f5;
+      color: #111111;
+    }
+
+    .row {
+      display: flex;
+      gap: 3rem;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .card {
+      border: 1px solid rgba(128,128,128,0.2);
+      border-radius: 8px;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .card label {
+      display: block;
+      margin-bottom: 1rem;
+      font-size: 0.8rem;
+      opacity: 0.5;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      border-top: 1px solid rgba(128,128,128,0.2);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Section 1: Dark background, all sizes -->
+  <section class="dark">
+    <h2>Dark Background</h2>
+    <div class="row">
+      <div class="card">
+        <label>Small (default)</label>
+        <studio-typo></studio-typo>
+      </div>
+      <div class="card">
+        <label>Medium</label>
+        <studio-typo size="medium"></studio-typo>
+      </div>
+      <div class="card">
+        <label>Large</label>
+        <studio-typo size="large"></studio-typo>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: Light background -->
+  <section class="light">
+    <h2>Light Background</h2>
+    <div class="row">
+      <div class="card">
+        <label>Small</label>
+        <studio-typo size="small"></studio-typo>
+      </div>
+      <div class="card">
+        <label>replay="visible" (scroll away and back)</label>
+        <studio-typo size="medium" replay="visible"></studio-typo>
+      </div>
+      <div class="card">
+        <label>replay="none" (static)</label>
+        <studio-typo size="medium" replay="none"></studio-typo>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: Footer usage -->
+  <section class="dark" style="min-height: auto;">
+    <footer>
+      <studio-typo size="small" speed="1.5"></studio-typo>
+    </footer>
+  </section>
+
+  <script src="dist/studio-typo.js"></script>
+</body>
+</html>
