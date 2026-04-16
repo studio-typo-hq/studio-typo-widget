@@ -23,22 +23,14 @@ const STYLES = `
   line-height: 1.4;
 }
 
-/* Auto theme: detect from prefers-color-scheme */
+/* Auto theme (default): inherit color from host page.
+   This means widget follows the host's text color, which adapts to
+   in-page theme toggles AND prefers-color-scheme automatically. */
 :host(:not([theme])), :host([theme="auto"]) {
   color: var(--st-text-color, inherit);
 }
-@media (prefers-color-scheme: dark) {
-  :host(:not([theme])), :host([theme="auto"]) {
-    color: var(--st-text-color, #ffffff);
-  }
-}
-@media (prefers-color-scheme: light) {
-  :host(:not([theme])), :host([theme="auto"]) {
-    color: var(--st-text-color, #111111);
-  }
-}
 
-/* Explicit themes */
+/* Explicit theme overrides */
 :host([theme="dark"]) {
   color: var(--st-text-color, #ffffff);
 }
